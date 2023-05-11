@@ -6,16 +6,16 @@
 
 int main(void)
 {
-    char symbol;
+    char cSymbol;
 
-    printf("Enter any symbol 04 character ie. '*', '#', '@' of choice: \n");
-    scanf("%c", &symbol);
+    printf("Enter any symbol as character ie. '*', '#', '@' of choice: \n");
+    scanf("%c", &cSymbol);
 
-    printf("       %c\n", symbol);
-    printf("    %c\t  %c\n", symbol, symbol);
-    printf("  %c\t    %c\n", symbol, symbol);
-    printf("%c\t      %c\n", symbol, symbol);
-    printf("  %c\t    %c\n", symbol, symbol);
-    printf("    %c\t  %c\n", symbol, symbol);
-    printf("       %c\n", symbol);
+    printf("       %c\n", cSymbol);
+    printf("    %c\t  %c\n", cSymbol, cSymbol);
+    printf("  %c\t    %c\n", cSymbol, cSymbol);
+    printf("%c\t      %c\n", cSymbol, cSymbol);
+    printf("  %c\t    %c\n", cSymbol, cSymbol);
+    printf("    %c\t  %c\n", cSymbol, cSymbol);
+    printf("       %c\n", cSymbol);
 }
