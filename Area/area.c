@@ -8,12 +8,23 @@
 *Return: Always returns 0
 */
 
-int radius, area;
+float printArea(int);
+
 int main(void)
 {
+	int iRadius;
+
 	printf("Enter radius(i.e. 10): " );
-	scanf("%d", &radius);
-	area = (int) (3.14159 * radius * radius);
-	printf("\nArea = %dcm\n", area);
+	scanf("%d", &iRadius);
+	printf("\nArea = %.2fcm\n", printArea(iRadius));
 	return 0;
+}
+
+float printArea(int iRadius)
+{
+	float fArea = 0.0;
+	#define PI 3.14159
+
+	fArea = (PI * iRadius * iRadius);
+	return fArea;
 }
