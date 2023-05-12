@@ -5,36 +5,76 @@
 
 #include <stdio.h>
 
-float printProfit(float, float);
+float calcTotalProfit(float, float);
+float calcRevenue(float, int);
+float calcTotalCommission(float, float, float, int);
+float calcExpenses(float fCost, int iQuantity);
 
 int main(void)
 {
-    float fRevenue, fExpenses, fProfit;
-    fRevenue = 0.0;
-    fExpenses = 0.0;
-    fProfit = 0.0;
+    int iQuantity = 0;
+    float fPrice = 0.0;
+    float fCommissionRate = 0.0;
+    float fRevenue = 0.0;
+    float fExpenses = 0.0;
+    float fProfit = 0.0;
+    float fCommission = 0.0;
+    float fCost = 0.0;
 
-    printf("Enter you total revenue: ");
-    scanf("%f", &fRevenue);
+    printf("Enter unit price of item: ");
+    scanf("%f", &fPrice);
 
-    printf("Enter the total expenses: ");
-    scanf("%f", &fExpenses);
+    printf("Enter the cost of item: ");
+    scanf("%f", &fCost);
 
-    fProfit = printProfit(fRevenue, fExpenses);
+    printf("Enter quantity: ");
+    scanf("%d", &iQuantity);
+
+    printf("Enter commission rate: ");
+    scanf("%f", &fCommissionRate);
+
+    fExpenses = calcExpenses(fCost, iQuantity);
+    fRevenue = calcRevenue(fPrice, iQuantity);
+
+    fProfit = calcTotalProfit(fRevenue, fExpenses);
     printf("Your net profit is Ghc%.2f\n", fProfit);
 
+    fCommission = calcTotalCommission(fCommissionRate, fPrice, fCost, iQuantity);
+    printf("Your total commission is GHc%.2f\n", fCommission);
+    printf("Profit less commission is GHc%.2f\n", fProfit - fCommission);
     return 0;
 }
 
-float printProfit(float fRevenue, float fExpense)
+float calcTotalProfit(float fRevenue, float fExpense)
 {
-    #define fTaxRate 0.095
-    float fGrossProfit, fNetProfit;
+    #define fTaxRateOnRev 0.095
+    float fGrossProfit;
     fGrossProfit = 0;
-    fNetProfit = 0;
 
     fGrossProfit = fRevenue - fExpense;
 
-    fNetProfit = fGrossProfit - (fGrossProfit * fTaxRate);
-    return fNetProfit;
+    return fGrossProfit - (fGrossProfit * fTaxRateOnRev);
+}
+
+float calcRevenue(float fUnitPrice, int iQuantity)
+{
+    return fUnitPrice * iQuantity;
+}
+
+float calcTotalCommission(float fRate, float fUnitPrice, float fCost, int iQuantity)
+{
+    float fCommission = 0;
+    fCommission = fRate * (fUnitPrice - fCost);
+    
+    return fCommission * iQuantity;
+}
+
+float calcExpenses(float fCost, int iQuantity)
+{
+    float fGrossExpenses;
+    #define fTaxRateOnExp 0.135
+
+    fGrossExpenses = fCost * iQuantity;
+
+    return fGrossExpenses + (fGrossExpenses * fTaxRateOnExp);
 }
