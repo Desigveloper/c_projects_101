@@ -9,7 +9,6 @@ void printOptions();
 void choseOption();
 
 int iMenuSelection = 0;
-char cExitResponse;
 float fDepositAmount = 0;
 float fWithdrawal = 0;
 float fTransfer = 0;
@@ -45,7 +44,7 @@ int main(void)
 
         if (dAccountBalance < fWithdrawal)
         {
-            printf("Sorry, you don't have enough balance to perform this transaction\n");
+            printf("Sorry, you don't have insufficient funds to perform this transaction\n");
         }
         else
         {
