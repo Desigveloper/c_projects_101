@@ -6,7 +6,7 @@
 #include <ctype.h>
 
 void printOptions();
-void choseOption();
+void chooseOption();
 
 int iMenuSelection = 0;
 float fDepositAmount = 0;
@@ -19,13 +19,13 @@ int main(void)
     printf("\nWELCOME AND THANKS FOR USING OUR\n");
     printf("\n\t.....BANK SYSTEM(ATM)......\n\n");
     printOptions();
-    choseOption();
+    chooseOption();
 
     while (iMenuSelection <= 0 || iMenuSelection > 5)
     {
         printf("Please enter the correct option\n");
         printOptions();
-        choseOption();
+        chooseOption();
         scanf("%d", &iMenuSelection);
     }
 
@@ -36,7 +36,7 @@ int main(void)
 
         printf("An amount of GHc%.2f has been credited to your account\n", fDepositAmount);
         printf("Your curent balance is GHc%.2f", dAccountBalance + fDepositAmount);
-    }
+    } // end deposit if
     else if(iMenuSelection == 2)
     {
         printf("Enter the withdrawal amount: ");
@@ -52,11 +52,11 @@ int main(void)
             printf("An amount of GHc%.2f has been debited from your account\n", fWithdrawal);
             printf("Your curent balance is GHc%.2f\n", dAccountBalance - fWithdrawal);
         }
-    }
+    } // end withdrawal if
     else if (iMenuSelection == 3)
     {
         printf("Your curent balance is GHc%.2f\n", dAccountBalance);
-    }
+    } // end balance check if
     else if (iMenuSelection == 4)
     {
         printf("Enter the transfer amount: ");
@@ -64,14 +64,14 @@ int main(void)
 
         printf("An amount of GHc%.2f has been debited from your account\n", fTransfer);
         printf("Your curent balance is GHc%.2f", dAccountBalance - fTransfer);
-    }
+    } // end transfer if
     else
     {
         printf("THANK YOU FOR TRANSACTING WITH US.\n");
-    }
+    } // end if
     
     return 0;
-}
+} // end main function
 
 void printOptions()
 {
@@ -80,10 +80,10 @@ void printOptions()
     printf("3. Check balance\n");
     printf("4. Transfers\n");
     printf("5. Quit\n");
-}
+} // end printOption function
 
-void choseOption()
+void chooseOption()
 {
     printf("Enter you selection: ");
     scanf("%d", &iMenuSelection);
-}
+} // end chooseOption func
