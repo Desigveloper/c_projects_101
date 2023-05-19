@@ -29,47 +29,44 @@ int main(void)
         scanf("%d", &iMenuSelection);
     }
 
-    if (iMenuSelection == 1)
-    {  
-        printf("Enter deposit amount: ");
-        scanf("%f", &fDepositAmount);
+    switch  (iMenuSelection) {  
+        case 1: printf("Enter deposit amount: ");
+                scanf("%f", &fDepositAmount);
 
-        printf("An amount of GHc%.2f has been credited to your account\n", fDepositAmount);
-        printf("Your curent balance is GHc%.2f", dAccountBalance + fDepositAmount);
-    } // end deposit if
-    else if(iMenuSelection == 2)
-    {
-        printf("Enter the withdrawal amount: ");
-        scanf("%f", &fWithdrawal);
+                printf("An amount of GHc%.2f has been credited to your account\n", fDepositAmount);
+                printf("Your curent balance is GHc%.2f", dAccountBalance + fDepositAmount);
+        break;
 
-        if (dAccountBalance < fWithdrawal)
-        {
-            printf("Sorry, you don't have insufficient funds to perform this transaction\n");
-        }
-        else
-        {
+        case 2: printf("Enter the withdrawal amount: ");
+                scanf("%f", &fWithdrawal);
 
-            printf("An amount of GHc%.2f has been debited from your account\n", fWithdrawal);
-            printf("Your curent balance is GHc%.2f\n", dAccountBalance - fWithdrawal);
-        }
-    } // end withdrawal if
-    else if (iMenuSelection == 3)
-    {
-        printf("Your curent balance is GHc%.2f\n", dAccountBalance);
-    } // end balance check if
-    else if (iMenuSelection == 4)
-    {
-        printf("Enter the transfer amount: ");
-        scanf("%f", &fTransfer);
+                if (dAccountBalance < fWithdrawal)
+                    {
+                        printf("Sorry, you don't have insufficient funds to perform this transaction\n");
+                    }
+                else
+                {
+                    printf("An amount of GHc%.2f has been debited from your account\n", fWithdrawal);
+                    printf("Your curent balance is GHc%.2f\n", dAccountBalance - fWithdrawal);
+                }
+        break;
 
-        printf("An amount of GHc%.2f has been debited from your account\n", fTransfer);
-        printf("Your curent balance is GHc%.2f", dAccountBalance - fTransfer);
-    } // end transfer if
-    else
-    {
-        printf("THANK YOU FOR TRANSACTING WITH US.\n");
-    } // end if
-    
+        case 3:
+            printf("Your curent balance is GHc%.2f\n", dAccountBalance);
+        break;
+
+        case 4:
+            printf("Enter the transfer amount: ");
+            scanf("%f", &fTransfer);
+            printf("An amount of GHc%.2f has been debited from your account\n", fTransfer);
+            printf("Your curent balance is GHc%.2f", dAccountBalance - fTransfer);
+        break;
+        
+        case 5:
+            printf("THANK YOU FOR TRANSACTING WITH US.\n");
+        break;
+    }
+
     return 0;
 } // end main function
 
