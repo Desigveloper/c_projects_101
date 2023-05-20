@@ -65,7 +65,7 @@ int main(void)
         case 5:
             printf("THANK YOU FOR TRANSACTING WITH US.\n");
         break;
-    }
+    } // end switch
 
     return 0;
 } // end main function
