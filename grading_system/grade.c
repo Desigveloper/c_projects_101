@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 void printGrade(int, char sName[256]);
 
@@ -22,6 +23,12 @@ int main(void)
 
     printf("Enter student score 1 to 100: ");
     scanf("%d", &iExamScore);
+
+    if (!(isdigit(iExamScore)) || iExamScore > 100 || iExamScore < 0) {
+        printf("\nPlease enter the right input.");
+        printf("\nEnter student score 1 to 100: ");
+        scanf("%d", &iExamScore);
+    }
 
     printGrade(iExamScore, sFullName);
 
