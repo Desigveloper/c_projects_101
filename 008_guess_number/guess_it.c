@@ -15,13 +15,31 @@
 #define NO 0
 #define YES 1
 
+int generateRandomNumber(void);
+void compareUserChoice(void);
+
 int main(void)
 {
-    unsigned int iRandomNum = 0, iUserGuess = -1, iNUmberOfGuesses = 0, iAttempts = 10, bExit = NO;
+    compareUserChoice();   
 
+        return 0;
+}
+
+int generateRandomNumber(void)
+{
+    unsigned int iRandomNum = 0;
+    
     printf("\nGenerating a random number.....\n");
     srand((unsigned) time(NULL));
     iRandomNum = rand() % 100;
+
+    return iRandomNum;
+}
+
+void compareUserChoice(void)
+{
+    unsigned int iUserGuess = -1, iNUmberOfGuesses = 0, iAttempts = 10, bExit = NO;
+    unsigned int iRandomNum = generateRandomNumber();
 
         while (bExit == NO)
         { 
@@ -61,6 +79,4 @@ int main(void)
                 bExit = YES;
             }
         }
-
-        return 0;
 }
