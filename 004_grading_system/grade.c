@@ -35,6 +35,14 @@ int main(void)
     return 0;
 }
 
+/**
+ * Prints the grade, grade point, and interpretation of a student's mark.
+ *
+ * @param iMark The student's mark.
+ * @param sName The student's name.
+ *
+ * @returns None
+ */
 void printGrade(int iMark, char sName[256])
 {
     if( iMark <= 100 && iMark >= 90)

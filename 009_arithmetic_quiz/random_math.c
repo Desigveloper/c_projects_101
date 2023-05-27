@@ -48,7 +48,14 @@ int main(void)
     return 0;
 }
 
-//Prints the arithmetic operator list
+
+/**
+ * Prints a list of mathematical operations to the console.
+ *
+ * @param None
+ *
+ * @returns None
+ */
 void printMenuList()
 {
     printf("1. Additions (+)\n");
@@ -58,6 +65,13 @@ void printMenuList()
     printf("5. Modulo\n");
 }
 
+/**
+ * Maps the user's response to a corresponding choice.
+ *
+ * @param iResponse The user's response.
+ *
+ * @returns The corresponding choice.
+ */
 int makeSelection(int iResponse)
 {
     int iChoice;
@@ -85,7 +99,17 @@ int makeSelection(int iResponse)
     return iChoice;
 }
 
-//Generates highest random number based on users age
+
+/**
+ * Generates two random numbers based on the user's age.
+ *
+ * If the user's age is less than 12, two random numbers between 0 and 99 are generated.
+ * If the user's age is between 12 and 17, two random numbers between 0 and 499 are generated.
+ * If the user's age is between 17 and 24, two random numbers between 0 and 999 are generated.
+ * If the user's age is greater than 24, two random numbers between 0 and 9999 are generated.
+ *
+ * @returns None
+ */
 void generateRandomNumbers(void)
 {
 
@@ -111,8 +135,14 @@ void generateRandomNumbers(void)
     }
 }
 
-//Generate random arithmetic questions based on the operator 
-// the user selects from the list and the numbers of questions.
+
+/**
+ * Generates a set of arithmetic questions based on user input.
+ *
+ * @param None
+ *
+ * @returns None
+ */
 void generateQuestions()
 {
     scanf("%d", &iMenuOption);
@@ -146,6 +176,13 @@ void generateQuestions()
     }
 }
 
+/**
+ * Generates a series of addition questions for the user to answer.
+ *
+ * @param iUserAge The age of the user.
+ *
+ * @returns None
+ */
 void generateAdditions(int iUserAge)
 {
     for (int i = 0; i < iNumberOfQuestions; i++)
@@ -168,6 +205,13 @@ void generateAdditions(int iUserAge)
         }
 }
 
+/**
+ * Generates a set of subtraction problems for the user to solve.
+ *
+ * @param iUserAge The age of the user.
+ *
+ * @returns None
+ */
 void generateSubtractions(int iUserAge)
 {
     for (int i = 0; i < iNumberOfQuestions; i++)
@@ -190,6 +234,13 @@ void generateSubtractions(int iUserAge)
         }
 }
 
+/**
+ * Generates multiplication questions for the user to answer and keeps track of their score.
+ *
+ * @param iUserAge The age of the user.
+ *
+ * @returns None
+ */
 void generateMultiplications(int iUserAge)
 {
     for (int i = 0; i < iNumberOfQuestions; i++)
@@ -212,6 +263,15 @@ void generateMultiplications(int iUserAge)
         }
 }
 
+/**
+ * Generates a division quiz for the user with iNumberOfQuestions number of questions.
+ * The function generates two random numbers and asks the user to divide them.
+ * The user's answer is compared with the correct answer and points are awarded accordingly.
+ *
+ * @param iUserAge The age of the user.
+ *
+ * @returns None
+ */
 void generateDivisions(int iUserAge)
 {
     for (int i = 0; i < iNumberOfQuestions; i++)
@@ -234,6 +294,13 @@ void generateDivisions(int iUserAge)
         }
 }
 
+/**
+ * Generates a series of modulo questions for the user to answer.
+ *
+ * @param iUserAge The age of the user.
+ *
+ * @returns None
+ */
 void generateModulo(int iUserAge)
 {
     for (int i = 0; i < iNumberOfQuestions; i++)

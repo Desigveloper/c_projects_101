@@ -30,6 +30,13 @@ int main(void)
     return 0;
 }
 
+/**
+ * Converts a given number of seconds into days, hours, minutes, and seconds.
+ *
+ * @param seconds The number of seconds to convert.
+ *
+ * @returns None
+ */
 void convert_time(integer seconds) {
     integer iDays, iHours, iMinutes, iHoursLeft, iMinutesLeft, iSecondsLeft;
     

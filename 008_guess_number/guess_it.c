@@ -25,6 +25,11 @@ int main(void)
         return 0;
 }
 
+/**
+ * Generates a random integer between 0 and 99.
+ *
+ * @returns The generated random integer.
+ */
 int generateRandomNumber(void)
 {
     unsigned int iRandomNum = 0;
@@ -36,6 +41,11 @@ int generateRandomNumber(void)
     return iRandomNum;
 }
 
+/**
+ * Compares the user's guess with a randomly generated number.
+ *
+ * @returns None
+ */
 void compareUserChoice(void)
 {
     unsigned int iUserGuess = -1, iNUmberOfGuesses = 0, iAttempts = 10, bExit = NO;

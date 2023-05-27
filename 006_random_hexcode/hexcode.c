@@ -19,6 +19,11 @@ int main()
     return 0;
 }
 
+/**
+ * Generates a random hexadecimal code of length 6.
+ *
+ * @returns None
+ */
 void generateCode()
 {
     int iRandomNum = 0;
