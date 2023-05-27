@@ -21,6 +21,13 @@ int main(void)
     printOptions();
     chooseOption();
 
+    /**
+     * Prompts the user to enter a valid menu option.
+     *
+     * @param iMenuSelection The user's selected menu option.
+     *
+     * @returns None
+     */
     while (iMenuSelection != 5 && (iMenuSelection <= 0 || iMenuSelection > 5))
     {
         printf("Please enter the correct option\n");
@@ -29,6 +36,14 @@ int main(void)
         scanf("%d", &iMenuSelection);
     }
 
+    /**
+     * Performs banking transactions based on user input.
+     *
+     * @param iMenuSelection The user's menu selection.
+     * @param dAccountBalance The current balance of the user's account.
+     *
+     * @returns 0 upon completion of the transaction.
+     */
     switch  (iMenuSelection) {  
         case 1: printf("Enter deposit amount: ");
                 scanf("%f", &fDepositAmount);
@@ -70,6 +85,11 @@ int main(void)
     return 0;
 } // end main function
 
+/**
+ * Prints the available options for a banking application.
+ *
+ * @returns None
+ */
 void printOptions()
 {
     printf("1. Deposit\n");
@@ -79,6 +99,13 @@ void printOptions()
     printf("5. Quit\n");
 } // end printOption function
 
+/**
+ * Prompts the user to enter a selection and reads the input from the console.
+ *
+ * @param None
+ *
+ * @returns None
+ */
 void chooseOption()
 {
     printf("Enter you selection: ");
