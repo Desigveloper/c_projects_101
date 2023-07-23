@@ -5,10 +5,15 @@ int main(void)
     int len;
     char *text;
 
-    scanf("%s", text);
+    text = malloc(100 * sizeof(char));
+
+    puts("Enter a string of character to be counter, the press Enter: ");
+    gets(text);
 
     len = _strlen(text);
 
-    printf("%d\n", len);
+    printf("The string (\"%s\") has %d characters.\n", text, len);
+
+    free(text);
     return 0;
 }
