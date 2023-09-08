@@ -4,6 +4,7 @@ int main(void)
 {
     int len;
     char *text;
+    
 
     text = malloc(100 * sizeof(char));
 
@@ -14,6 +15,5 @@ int main(void)
 
     printf("The string (\"%s\") has %d characters.\n", text, len);
 
-    free(text);
     return 0;
 }
